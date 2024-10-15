@@ -1,6 +1,6 @@
-const Audio = require("../models/Audio");
+import Audio from "../models/Audio.js";
 
-exports.getAllAudio = async (req, res) => {
+export const getAllAudio = async (req, res) => {
   try {
     const audioFiles = await Audio.find();
     res.json(audioFiles);
@@ -10,7 +10,7 @@ exports.getAllAudio = async (req, res) => {
   }
 };
 
-exports.getAudioById = async (req, res) => {
+export const getAudioById = async (req, res) => {
   try {
     const audio = await Audio.findById(req.params.id);
     if (!audio) {
@@ -26,7 +26,7 @@ exports.getAudioById = async (req, res) => {
   }
 };
 
-exports.createAudio = async (req, res) => {
+export const createAudio = async (req, res) => {
   const { filename } = req.body;
 
   try {
@@ -39,7 +39,7 @@ exports.createAudio = async (req, res) => {
   }
 };
 
-exports.updateAudioStatus = async (req, res) => {
+export const updateAudioStatus = async (req, res) => {
   const { status, assignedTo } = req.body;
 
   try {

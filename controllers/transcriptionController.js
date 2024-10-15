@@ -1,7 +1,7 @@
-const Transcription = require("../models/Transcription");
-const Audio = require("../models/Audio");
+import Transcription from "../models/Transcription.js";
+import Audio from "../models/Audio.js";
 
-exports.createTranscription = async (req, res) => {
+export const createTranscription = async (req, res) => {
   const { audioId, text } = req.body;
 
   try {
@@ -28,7 +28,7 @@ exports.createTranscription = async (req, res) => {
   }
 };
 
-exports.getTranscriptionByAudioId = async (req, res) => {
+export const getTranscriptionByAudioId = async (req, res) => {
   try {
     const transcription = await Transcription.findOne({ audio: req.params.audioId });
     if (!transcription) {
@@ -44,7 +44,7 @@ exports.getTranscriptionByAudioId = async (req, res) => {
   }
 };
 
-exports.verifyTranscription = async (req, res) => {
+export const verifyTranscription = async (req, res) => {
   const { isCorrect } = req.body;
 
   try {
