@@ -4,7 +4,13 @@ const AudioSchema = new Schema({
   filename: { type: String, required: true, unique: true },
   status: {
     type: String,
-    enum: ["not_started", "in_progress", "completed", "verified", "unsuitable"],
+    enum: [
+      "not_started",
+      "in_progress",
+      "transcriber_verified",
+      "controller_verified",
+      "unsuitable",
+    ],
     default: "not_started",
   },
   assignedTo: { type: Schema.Types.ObjectId, ref: "User" },
