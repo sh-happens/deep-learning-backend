@@ -13,7 +13,15 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://deep-learning-front-e4yql1944-yerbol-kosbayevs-projects.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
