@@ -3,6 +3,7 @@ import { Schema, model } from "mongoose";
 const TranscriptionSchema = new Schema({
   audio: { type: Schema.Types.ObjectId, ref: "Audio", required: true },
   existingText: { type: String, required: true },
+  filename: { type: String, required: true, unique: true },
   verifiedBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
   transcriptionVerification: {
     isUnsuitable: { type: Boolean },
