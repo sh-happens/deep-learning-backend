@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://deep-learning-front-e4yql1944-yerbol-kosbayevs-projects.vercel.app/",
+      "https://deep-learning-front-e4yql1944-yerbol-kosbayevs-projects.vercel.app",
     ],
     credentials: true,
   })
