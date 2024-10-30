@@ -18,6 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://deep-learning-front-e4yql1944-yerbol-kosbayevs-projects.vercel.app",
+      "http://localhost:5174",
     ],
     credentials: true,
   })
